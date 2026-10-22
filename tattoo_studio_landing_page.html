@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INK & ART Innovation — Инновационная студия татуировки в Бишкеке</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#0c0a09',
+                        darkCard: '#1c1917',
+                        goldAccent: '#d97706',
+                        goldHover: '#f59e0b',
+                        goldLight: '#fef3c7',
+                        glassBorder: 'rgba(217, 119, 6, 0.2)',
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0c0a09;
+            color: #f3f4f6;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Glassmorphism Styles */
+        .glass-card {
+            background: rgba(28, 25, 23, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(217, 119, 6, 0.18);
+            border-radius: 1rem;
+        }
+
+        .glass-card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card-hover:hover {
+            transform: translateY(-6px);
+            border-color: rgba(217, 119, 6, 0.5);
+            box-shadow: 0 12px 30px -10px rgba(217, 119, 6, 0.25);
+        }
+
+        .glass-nav {
+            background: rgba(12, 10, 9, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(217, 119, 6, 0.15);
+        }
+
+        /* Text Gradients */
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #fef3c7 0%, #f59e0b 50%, #d97706 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gold-gradient-bg {
+            background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
+        }
+
+        .gold-glow {
+            box-shadow: 0 0 25px rgba(217, 119, 6, 0.35);
+        }
+
+        .gold-glow:hover {
+            box-shadow: 0 0 35px rgba(245, 158, 11, 0.55);
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0c0a09;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #27272a;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d97706;
+        }
+
+        /* Fade-in Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Custom Input Focus */
+        .custom-input:focus {
+            border-color: #d97706;
+            outline: none;
+            box-shadow: 0 0 10px rgba(217, 119, 6, 0.3);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-goldAccent selection:text-white">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="fixed top-0 left-0 w-full z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl gold-gradient-bg flex items-center justify-center text-darkBg font-black text-xl shadow-lg transition-transform group-hover:scale-105">
+                    <i class="fa-solid me-0 fa-pen-nib"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-bold text-xl tracking-wider text-white">INK & ART</span>
+                    <span class="text-xs text-goldAccent tracking-widest uppercase font-semibold">Innovation • Бишкек</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium">
+                <a href="#about" class="text-gray-300 hover:text-goldAccent transition-colors">О студии</a>
+                <a href="#services" class="text-gray-300 hover:text-goldAccent transition-colors">Услуги</a>
+                <a href="#tech" class="text-gray-300 hover:text-goldAccent transition-colors">Инновации</a>
+                <a href="#portfolio" class="text-gray-300 hover:text-goldAccent transition-colors">Портфолио</a>
+                <a href="#stats" class="text-gray-300 hover:text-goldAccent transition-colors">Цифры</a>
+                <a href="#reviews" class="text-gray-300 hover:text-goldAccent transition-colors">Отзывы</a>
+                <a href="#contacts" class="text-gray-300 hover:text-goldAccent transition-colors">Контакты</a>
+            </nav>
+
+            <!-- CTA Header Button -->
+            <div class="hidden sm:block">
+                <a href="#booking" class="gold-gradient-bg text-darkBg font-bold px-5 py-2.5 rounded-xl gold-glow transition-all duration-300 inline-flex items-center gap-2 hover:scale-105">
+                    <i class="fa-regular fa-calendar-check"></i>
+                    <span>Записаться</span>
+                </a>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="menu-btn" class="lg:hidden text-gray-300 hover:text-goldAccent focus:outline-none p-2" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars text-2xl" id="menu-icon"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-darkBg/95 backdrop-blur-xl border-b border-glassBorder px-6 py-6 space-y-4">
+            <a href="#about" class="mobile-link block text-lg font-medium text-gray-200 hover:text-goldAccent">О студии</a>
+            <a href="#services" class="mobile-link block text-lg font-medium text-gray-200 hover:text-goldAccent">Услуги</a>
+            <a href="#tech" class="mobile-link block text-lg font-medium text-gray-200 hover:text-goldAccent">Инновации</a>
+            <a href="#portfolio" class="mobile-link block text-lg font-medium text-gray-200 hover:text-goldAccent">Портфолио</a>
+            <a href="#stats" class="mobile-link block text-lg font-medium text-gray-200 hover:text-goldAccent">Цифры</a>
+            <a href="#reviews" class="mobile-link block text-lg font-medium text-gray-200 hover:text-goldAccent">Отзывы</a>
+            <a href="#contacts" class="mobile-link block text-lg font-medium text-gray-200 hover:text-goldAccent">Контакты</a>
+            <a href="#booking" class="mobile-link block w-full text-center gold-gradient-bg text-darkBg font-bold py-3 rounded-xl">Записаться на сеанс</a>
+        </div>
+    </header>
+
+    <main class="pt-20">
+
+        <!-- SECTION 1: HERO SECTION -->
+        <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-20 px-4">
+            <!-- Background Radial Glows & Grid -->
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(217,119,6,0.12)_0,transparent_70%)] pointer-events-none"></div>
+            <div class="absolute top-1/4 left-10 w-72 h-72 bg-goldAccent/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute bottom-10 right-10 w-96 h-96 bg-amber-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="max-w-5xl mx-auto text-center z-10 space-y-8 reveal">
+                <!-- City Tag Badge -->
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card border-goldAccent/30 text-goldLight text-xs sm:text-sm font-semibold tracking-wider uppercase">
+                    <span class="w-2 h-2 rounded-full bg-goldAccent animate-ping"></span>
+                    Флагманская тату-студия в Бишкеке
+                </div>
+
+                <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white leading-tight">
+                    INK & ART INNOVATION<br>
+                    <span class="gold-gradient-text">Твое тело. Твое искусство.</span>
+                </h1>
+
+                <p class="max-w-2xl mx-auto text-gray-300 text-base sm:text-lg md:text-xl font-normal leading-relaxed">
+                    Премиальная студия хужожественной татуировки нового поколения. Мы объединили авторский художественный стиль, ИИ-примерку эскизов, медицинские стандарты стерильности и ведущих мастеров Кыргызстана.
+                </p>
+
+                <!-- Buttons -->
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                    <a href="#portfolio" class="w-full sm:w-auto gold-gradient-bg text-darkBg font-extrabold px-8 py-4 rounded-xl gold-glow hover:scale-105 transition-all text-center flex items-center justify-center gap-3">
+                        <i class="fa-solid fa-images"></i>
+                        <span>Смотреть портфолио</span>
+                    </a>
+                    <a href="#booking" class="w-full sm:w-auto glass-card hover:bg-white/5 border border-goldAccent/40 text-white font-bold px-8 py-4 rounded-xl transition-all text-center flex items-center justify-center gap-3">
+                        <i class="fa-regular fa-calendar-check text-goldAccent"></i>
+                        <span>Записаться на сеанс</span>
+                    </a>
+                </div>
+
+                <!-- Features Micro-Bar -->
+                <div class="pt-12 grid grid-cols-2 md:grid-cols-4 gap-4 text-left border-t border-white/10 max-w-4xl mx-auto">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-shield-halved text-goldAccent text-2xl"></i>
+                        <span class="text-xs sm:text-sm text-gray-300">100% Стерильность & Безопасность</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-wand-magic-sparkles text-goldAccent text-2xl"></i>
+                        <span class="text-xs sm:text-sm text-gray-300">ИИ-примерка эскизов в 3D</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-award text-goldAccent text-2xl"></i>
+                        <span class="text-xs sm:text-sm text-gray-300">Топ-8 художников Бишкека</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-coins text-goldAccent text-2xl"></i>
+                        <span class="text-xs sm:text-sm text-gray-300">CashBack программа лояльности</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: ABOUT STUDIO -->
+        <section id="about" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6 reveal">
+                    <div class="inline-block text-goldAccent text-sm font-bold tracking-widest uppercase">О концепции</div>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white">Переосмысление культуры татуировки в Бишкеке</h2>
+                    <p class="text-gray-300 leading-relaxed">
+                        Студия **INK & ART Innovation** создана для тех, кто ценит эстетику, индивидуальность и высший стандарт качества. Мы перенесли древнее искусство нательной живописи в современный цифровой век.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed">
+                        Наша миссия — сделать процесс создания татуировки максимально комфортным, понятным и предсказуемым. От первой мысли и цифрового ИИ-моделирования до идеального воплощения на вашей коже и полного цикла ухода.
+                    </p>
+
+                    <!-- Core Advantages Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                        <div class="glass-card p-4 flex gap-3 items-start">
+                            <div class="p-2 bg-goldAccent/20 rounded-lg text-goldAccent">
+                                <i class="fa-solid fa-microscope text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Мед-стандарт</h4>
+                                <p class="text-xs text-gray-400">Одноразовые картриджи, хирургическая дезинфекция и автоклавирование.</p>
+                            </div>
+                        </div>
+                        <div class="glass-card p-4 flex gap-3 items-start">
+                            <div class="p-2 bg-goldAccent/20 rounded-lg text-goldAccent">
+                                <i class="fa-solid fa-palette text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-sm">Авторский эскиз</h4>
+                                <p class="text-xs text-gray-400">Каждая работа разрабатывается индивидуально под анатомию вашего тела.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Creative Image Frame -->
+                <div class="relative reveal">
+                    <div class="absolute -inset-1 gold-gradient-bg rounded-2xl blur opacity-30"></div>
+                    <div class="relative glass-card overflow-hidden rounded-2xl border border-goldAccent/30">
+                        <img src="https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?auto=format&fit=crop&w=1000&q=80" alt="Процесс создания татуировки" class="w-full h-[450px] object-cover hover:scale-105 transition-transform duration-700">
+                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-darkBg via-darkBg/60 to-transparent p-6">
+                            <div class="text-goldLight font-semibold text-lg">Студийный комфорт премиум-класса</div>
+                            <p class="text-xs text-gray-300">Бишкек, пр. Чуй / ул. Исанова & мкр 10</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: SERVICES & SPECIALIZATIONS -->
+        <section id="services" class="py-24 bg-stone-950/60 px-4 sm:px-6 lg:px-8 border-y border-white/5">
+            <div class="max-w-7xl mx-auto space-y-16">
+                <div class="text-center max-w-3xl mx-auto space-y-4 reveal">
+                    <span class="text-goldAccent text-sm font-bold tracking-widest uppercase">Специализация</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white">Услуги & Сервис Премиум Уровня</h2>
+                    <p class="text-gray-400">Мы выполняем работы любой сложности — от лаконичных надписей до масштабных художественных рукавов и перекрытия старых татуировок.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Service 1 -->
+                    <div class="glass-card p-8 glass-card-hover space-y-4 reveal">
+                        <div class="w-14 h-14 rounded-xl bg-goldAccent/10 border border-goldAccent/30 flex items-center justify-center text-goldAccent text-2xl">
+                            <i class="fa-solid fa-paintbrush"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Художественная Татуировка</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Создание уникальных татуировок в стилях Реализм, Графика, Япония, Блэкворк, Нью-скул. Работаем гипоаллергенными пигментами USA & EU.
+                        </p>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="glass-card p-8 glass-card-hover space-y-4 reveal">
+                        <div class="w-14 h-14 rounded-xl bg-goldAccent/10 border border-goldAccent/30 flex items-center justify-center text-goldAccent text-2xl">
+                            <i class="fa-solid fa-mask"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Cover-Up & Реставрация</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Профессиональное перекрытие неудачных или старых татуировок, шрамов и рубцов без следов прошлых ошибок.
+                        </p>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="glass-card p-8 glass-card-hover space-y-4 reveal">
+                        <div class="w-14 h-14 rounded-xl bg-goldAccent/10 border border-goldAccent/30 flex items-center justify-center text-goldAccent text-2xl">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Лазерное Осветление</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Безопасное осветление пигмента неодимовым лазером последнего поколения без рубцов для подготовки к качественному перекрытию.
+                        </p>
+                    </div>
+
+                    <!-- Service 4 -->
+                    <div class="glass-card p-8 glass-card-hover space-y-4 reveal">
+                        <div class="w-14 h-14 rounded-xl bg-goldAccent/10 border border-goldAccent/30 flex items-center justify-center text-goldAccent text-2xl">
+                            <i class="fa-solid fa-feather-pointed"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Мини-тату & Леттеринг</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Изящные тонкие линии, надписи, микрореализм и геометрия. Идеально для первого опыта с высокой детализацией.
+                        </p>
+                    </div>
+
+                    <!-- Service 5 -->
+                    <div class="glass-card p-8 glass-card-hover space-y-4 reveal">
+                        <div class="w-14 h-14 rounded-xl bg-goldAccent/10 border border-goldAccent/30 flex items-center justify-center text-goldAccent text-2xl">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">ИИ-Моделирование Эскиза</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Генерация и доработка уникального дизайна вместе с топ-художником и нейросетью с наложением на 3D-модель вашего тела.
+                        </p>
+                    </div>
+
+                    <!-- Service 6 -->
+                    <div class="glass-card p-8 glass-card-hover space-y-4 reveal">
+                        <div class="w-14 h-14 rounded-xl bg-goldAccent/10 border border-goldAccent/30 flex items-center justify-center text-goldAccent text-2xl">
+                            <i class="fa-solid fa-crown"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">VIP Зал & Выездной Сервис</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Приватные сеансы в закрытом VIP-кабинете студии или выезд мастеров со всем стерильным оборудованием.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: INNOVATIVE TECH -->
+        <section id="tech" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="glass-card p-8 sm:p-12 relative overflow-hidden border-goldAccent/30 reveal">
+                <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-goldAccent/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+                    <div class="space-y-6">
+                        <span class="px-3 py-1 bg-goldAccent/20 text-goldAccent rounded-md text-xs font-bold uppercase tracking-wider">Цифровая эпоха</span>
+                        <h2 class="text-3xl sm:text-4xl font-bold text-white">Инновационные технологии на службе вашего стиля</h2>
+                        <p class="text-gray-300">
+                            Забудьте о сомнениях "как это будет смотреться на мне". Мы внедрили передовые цифровые инструменты в процесс создания тату.
+                        </p>
+
+                        <ul class="space-y-4 text-gray-300">
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-goldAccent mt-1"></i>
+                                <span><strong>3D-Проекция эскиза:</strong> Виртуальная примерка татуировки на вашу анатомическую модель до начала сеанса.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-goldAccent mt-1"></i>
+                                <span><strong>Цифровой подбор пигментов:</strong> Сканирование тона кожи для идеальной цветопередачи и стойкости красок.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-goldAccent mt-1"></i>
+                                <span><strong>Онлайн Консультация 24/7:</strong> Расчет стоимости, подбор стиля и запись через умную систему за 1 минуту.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i class="fa-solid fa-circle-check text-goldAccent mt-1"></i>
+                                <span><strong>CashBack до 10%:</strong> Электронная карта лояльности с накоплением бонусов за каждый сеанс и рекомендации.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="glass-card p-6 text-center space-y-2 border-goldAccent/20">
+                            <i class="fa-solid fa-brain text-4xl text-goldAccent"></i>
+                            <div class="text-white font-bold">AI-Design Studio</div>
+                            <div class="text-xs text-gray-400">Генерация уникальных сюжетов</div>
+                        </div>
+                        <div class="glass-card p-6 text-center space-y-2 border-goldAccent/20">
+                            <i class="fa-solid fa-mobile-screen-button text-4xl text-goldAccent"></i>
+                            <div class="text-white font-bold">App Control</div>
+                            <div class="text-xs text-gray-400">Отслеживание заживления</div>
+                        </div>
+                        <div class="glass-card p-6 text-center space-y-2 border-goldAccent/20">
+                            <i class="fa-solid fa-vr-cardboard text-4xl text-goldAccent"></i>
+                            <div class="text-white font-bold">AR-Примерка</div>
+                            <div class="text-xs text-gray-400">Точное позиционирование</div>
+                        </div>
+                        <div class="glass-card p-6 text-center space-y-2 border-goldAccent/20">
+                            <i class="fa-solid fa-qrcode text-4xl text-goldAccent"></i>
+                            <div class="text-white font-bold">Smart Pass</div>
+                            <div class="text-xs text-gray-400">Электронный абонемент</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: INTERACTIVE PORTFOLIO & PRICING CARDS -->
+        <section id="portfolio" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="space-y-12">
+                <div class="text-center max-w-3xl mx-auto space-y-4 reveal">
+                    <span class="text-goldAccent text-sm font-bold tracking-widest uppercase">Наши Работы & Прейскурант</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white">Портфолио мастеров и Цены в сомах (KGS)</h2>
+                    <p class="text-gray-400">Выберите интересующее направление, ознакомьтесь с примерами и ориентировочной стоимостью сеанса.</p>
+                </div>
+
+                <!-- Filter Buttons -->
+                <div class="flex flex-wrap justify-center gap-3 reveal" id="portfolio-filters">
+                    <button data-filter="all" class="filter-btn active px-5 py-2.5 rounded-xl text-sm font-semibold transition-all bg-goldAccent text-darkBg gold-glow">Все стили</button>
+                    <button data-filter="realism" class="filter-btn px-5 py-2.5 rounded-xl text-sm font-semibold transition-all glass-card text-gray-300 hover:text-white hover:border-goldAccent">Реализм</button>
+                    <button data-filter="graphics" class="filter-btn px-5 py-2.5 rounded-xl text-sm font-semibold transition-all glass-card text-gray-300 hover:text-white hover:border-goldAccent">Графика</button>
+                    <button data-filter="minimalism" class="filter-btn px-5 py-2.5 rounded-xl text-sm font-semibold transition-all glass-card text-gray-300 hover:text-white hover:border-goldAccent">Минимализм</button>
+                    <button data-filter="coverup" class="filter-btn px-5 py-2.5 rounded-xl text-sm font-semibold transition-all glass-card text-gray-300 hover:text-white hover:border-goldAccent">Cover-Up</button>
+                </div>
+
+                <!-- Portfolio Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-grid">
+
+                    <!-- Card 1 -->
+                    <div class="portfolio-item glass-card glass-card-hover overflow-hidden flex flex-col justify-between reveal" data-category="minimalism">
+                        <div class="relative overflow-hidden group cursor-pointer border-b border-white/10" onclick="openLightbox('https://images.unsplash.com/photo-1562962230-16e4623d36e6?auto=format&fit=crop&w=1000&q=80', 'Мини-татуировка & Леттеринг')">
+                            <img src="https://images.unsplash.com/photo-1562962230-16e4623d36e6?auto=format&fit=crop&w=800&q=80" alt="Мини татуировка" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-darkBg/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <span class="text-white text-sm font-bold bg-goldAccent/90 px-4 py-2 rounded-lg flex items-center gap-2"><i class="fa-solid fa-magnifying-glass-plus"></i> Увеличить</span>
+                            </div>
+                        </div>
+                        <div class="p-6 space-y-4 flex-grow flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-start mb-2">
+                                    <h3 class="text-xl font-bold text-white">Мини-татуировка</h3>
+                                    <span class="text-goldAccent font-extrabold text-lg">2 500 KGS</span>
+                                </div>
+                                <p class="text-gray-400 text-sm">Небольшие контурные работы, символы, надписи до 5 см. Время работы: 1 час.</p>
+                            </div>
+                            <a href="#booking" onclick="selectService('Мини-татуировка')" class="w-full text-center block bg-white/5 hover:bg-goldAccent hover:text-darkBg text-white border border-goldAccent/30 font-semibold py-2.5 rounded-xl transition-all">Записаться</a>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="portfolio-item glass-card glass-card-hover overflow-hidden flex flex-col justify-between reveal" data-category="realism">
+                        <div class="relative overflow-hidden group cursor-pointer border-b border-white/10" onclick="openLightbox('https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&w=1000&q=80', 'Черно-белый Реализм')">
+                            <img src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?auto=format&fit=crop&w=800&q=80" alt="Реализм" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-darkBg/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <span class="text-white text-sm font-bold bg-goldAccent/90 px-4 py-2 rounded-lg flex items-center gap-2"><i class="fa-solid fa-magnifying-glass-plus"></i> Увеличить</span>
+                            </div>
+                        </div>
+                        <div class="p-6 space-y-4 flex-grow flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-start mb-2">
+                                    <h3 class="text-xl font-bold text-white">Художественный Сеанс</h3>
+                                    <span class="text-goldAccent font-extrabold text-lg">7 000 KGS</span>
+                                </div>
+                                <p class="text-gray-400 text-sm">Полноценный дневной сеанс (до 4-5 часов). Портреты, реализм, детализированные сюжеты.</p>
+                            </div>
+                            <a href="#booking" onclick="selectService('Художественный Сеанс')" class="w-full text-center block bg-white/5 hover:bg-goldAccent hover:text-darkBg text-white border border-goldAccent/30 font-semibold py-2.5 rounded-xl transition-all">Записаться</a>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="portfolio-item glass-card glass-card-hover overflow-hidden flex flex-col justify-between reveal" data-category="coverup">
+                        <div class="relative overflow-hidden group cursor-pointer border-b border-white/10" onclick="openLightbox('https://images.unsplash.com/photo-1590246814885-568637649578?auto=format&fit=crop&w=1000&q=80', 'Перекрытие (Cover-Up)')">
+                            <img src="https://images.unsplash.com/photo-1590246814885-568637649578?auto=format&fit=crop&w=800&q=80" alt="Cover-Up" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-darkBg/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <span class="text-white text-sm font-bold bg-goldAccent/90 px-4 py-2 rounded-lg flex items-center gap-2"><i class="fa-solid fa-magnifying-glass-plus"></i> Увеличить</span>
+                            </div>
+                        </div>
+                        <div class="p-6 space-y-4 flex-grow flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-start mb-2">
+                                    <h3 class="text-xl font-bold text-white">Перекрытие (Cover-Up)</h3>
+                                    <span class="text-goldAccent font-extrabold text-lg">8 500 KGS</span>
+                                </div>
+                                <p class="text-gray-400 text-sm">Сложное перекрытие партаков и шрамов с индивидуальной разработкой маскирующего эскиза.</p>
+                            </div>
+                            <a href="#booking" onclick="selectService('Перекрытие (Cover-Up)')" class="w-full text-center block bg-white/5 hover:bg-goldAccent hover:text-darkBg text-white border border-goldAccent/30 font-semibold py-2.5 rounded-xl transition-all">Записаться</a>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="portfolio-item glass-card glass-card-hover overflow-hidden flex flex-col justify-between reveal" data-category="graphics">
+                        <div class="relative overflow-hidden group cursor-pointer border-b border-white/10" onclick="openLightbox('https://images.unsplash.com/photo-1542382257-80dedb725088?auto=format&fit=crop&w=1000&q=80', 'Авторская Графика')">
+                            <img src="https://images.unsplash.com/photo-1542382257-80dedb725088?auto=format&fit=crop&w=800&q=80" alt="Графика" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-darkBg/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <span class="text-white text-sm font-bold bg-goldAccent/90 px-4 py-2 rounded-lg flex items-center gap-2"><i class="fa-solid fa-magnifying-glass-plus"></i> Увеличить</span>
+                            </div>
+                        </div>
+                        <div class="p-6 space-y-4 flex-grow flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-start mb-2">
+                                    <h3 class="text-xl font-bold text-white">Авторская Графика</h3>
+                                    <span class="text-goldAccent font-extrabold text-lg">6 000 KGS</span>
+                                </div>
+                                <p class="text-gray-400 text-sm">Четкие линии, випшейдинг, гравюрный стиль и геометрические орнаменты.</p>
+                            </div>
+                            <a href="#booking" onclick="selectService('Авторская Графика')" class="w-full text-center block bg-white/5 hover:bg-goldAccent hover:text-darkBg text-white border border-goldAccent/30 font-semibold py-2.5 rounded-xl transition-all">Записаться</a>
+                        </div>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="portfolio-item glass-card glass-card-hover overflow-hidden flex flex-col justify-between reveal" data-category="realism">
+                        <div class="relative overflow-hidden group cursor-pointer border-b border-white/10" onclick="openLightbox('https://images.unsplash.com/photo-1565058384573-239f2eb46e63?auto=format&fit=crop&w=1000&q=80', 'Лазерное Осветление')">
+                            <img src="https://images.unsplash.com/photo-1565058384573-239f2eb46e63?auto=format&fit=crop&w=800&q=80" alt="Лазер" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-darkBg/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <span class="text-white text-sm font-bold bg-goldAccent/90 px-4 py-2 rounded-lg flex items-center gap-2"><i class="fa-solid fa-magnifying-glass-plus"></i> Увеличить</span>
+                            </div>
+                        </div>
+                        <div class="p-6 space-y-4 flex-grow flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-start mb-2">
+                                    <h3 class="text-xl font-bold text-white">Лазерное Осветление</h3>
+                                    <span class="text-goldAccent font-extrabold text-lg">3 000 KGS</span>
+                                </div>
+                                <p class="text-gray-400 text-sm">Сеанс безопасного осветления тату лазером без ожогов и шрамов.</p>
+                            </div>
+                            <a href="#booking" onclick="selectService('Лазерное Осветление')" class="w-full text-center block bg-white/5 hover:bg-goldAccent hover:text-darkBg text-white border border-goldAccent/30 font-semibold py-2.5 rounded-xl transition-all">Записаться</a>
+                        </div>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div class="portfolio-item glass-card glass-card-hover overflow-hidden flex flex-col justify-between reveal" data-category="graphics">
+                        <div class="relative overflow-hidden group cursor-pointer border-b border-white/10" onclick="openLightbox('https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1000&q=80', 'VIP Проект Рукав')">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" alt="VIP Проект" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-darkBg/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <span class="text-white text-sm font-bold bg-goldAccent/90 px-4 py-2 rounded-lg flex items-center gap-2"><i class="fa-solid fa-magnifying-glass-plus"></i> Увеличить</span>
+                            </div>
+                        </div>
+                        <div class="p-6 space-y-4 flex-grow flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-start mb-2">
+                                    <h3 class="text-xl font-bold text-white">VIP Комплекс "Рукав"</h3>
+                                    <span class="text-goldAccent font-extrabold text-lg">12 000 KGS</span>
+                                </div>
+                                <p class="text-gray-400 text-sm">Пакет сеанса масштабного проекта в VIP-зале с полным набором премиум-ухода.</p>
+                            </div>
+                            <a href="#booking" onclick="selectService('VIP Комплекс')" class="w-full text-center block bg-white/5 hover:bg-goldAccent hover:text-darkBg text-white border border-goldAccent/30 font-semibold py-2.5 rounded-xl transition-all">Записаться</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: ANIMATED STATISTICS -->
+        <section id="stats" class="py-20 bg-stone-950 border-y border-white/5 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+
+                    <div class="glass-card p-6 space-y-2 reveal">
+                        <div class="text-4xl sm:text-5xl font-extrabold gold-gradient-text count-up" data-target="3500">0</div>
+                        <div class="text-sm font-semibold text-gray-300">Довольных Клиентов</div>
+                        <p class="text-xs text-gray-500">В Бишкеке и регионе</p>
+                    </div>
+
+                    <div class="glass-card p-6 space-y-2 reveal">
+                        <div class="text-4xl sm:text-5xl font-extrabold gold-gradient-text"><span class="count-up" data-target="99">0</span>%</div>
+                        <div class="text-sm font-semibold text-gray-300">Стерильность & Защита</div>
+                        <p class="text-xs text-gray-500">Евро-стандарты гигиены</p>
+                    </div>
+
+                    <div class="glass-card p-6 space-y-2 reveal">
+                        <div class="text-4xl sm:text-5xl font-extrabold gold-gradient-text"><span class="count-up" data-target="4.9" data-decimal="1">0</span>/5</div>
+                        <div class="text-sm font-semibold text-gray-300">Средний Рейтинг</div>
+                        <p class="text-xs text-gray-500">На основе 800+ отзывов</p>
+                    </div>
+
+                    <div class="glass-card p-6 space-y-2 reveal">
+                        <div class="text-4xl sm:text-5xl font-extrabold gold-gradient-text count-up" data-target="8">0</div>
+                        <div class="text-sm font-semibold text-gray-300">Топ-Мастеров</div>
+                        <p class="text-xs text-gray-500">Художники высшего класса</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 7: CLIENT REVIEWS -->
+        <section id="reviews" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+            <div class="space-y-12">
+                <div class="text-center max-w-3xl mx-auto space-y-4 reveal">
+                    <span class="text-goldAccent text-sm font-bold tracking-widest uppercase">Отзывы Гостей</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white">Что говорят о нас в Бишкеке</h2>
+                    <p class="text-gray-400">Реальные эмоции клиентов, доверивших нам создание своего уникального стиля.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Review 1 -->
+                    <div class="glass-card p-8 space-y-4 flex flex-col justify-between reveal">
+                        <div class="space-y-3">
+                            <div class="flex text-goldAccent gap-1">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-gray-300 text-sm leading-relaxed italic">
+                                "Делал рукав у мастера Асхата в филиале на Исанова. Инновационная примерка в 3D — это нечто! Сразу понял, как будет выглядеть работа. Стерильность на высшем уровне, зажило за 10 дней."
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+                            <div class="w-10 h-10 rounded-full gold-gradient-bg text-darkBg font-bold flex items-center justify-center">
+                                БК
+                            </div>
+                            <div>
+                                <div class="font-bold text-white text-sm">Бектур К.</div>
+                                <div class="text-xs text-gray-400">Клиент филиала Чуй/Исанова</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 2 -->
+                    <div class="glass-card p-8 space-y-4 flex flex-col justify-between reveal">
+                        <div class="space-y-3">
+                            <div class="flex text-goldAccent gap-1">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-gray-300 text-sm leading-relaxed italic">
+                                "Первая татуировка — было очень страшно. Но атмосфера студии в 10 микрорайоне и профессионализм мастера Алины полностью успокоили. Линии идеальные, все очень аккуратно!"
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+                            <div class="w-10 h-10 rounded-full gold-gradient-bg text-darkBg font-bold flex items-center justify-center">
+                                ДА
+                            </div>
+                            <div>
+                                <div class="font-bold text-white text-sm">Дарья А.</div>
+                                <div class="text-xs text-gray-400">Клиент филиала мкр 10</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 3 -->
+                    <div class="glass-card p-8 space-y-4 flex flex-col justify-between reveal">
+                        <div class="space-y-3">
+                            <div class="flex text-goldAccent gap-1">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="text-gray-300 text-sm leading-relaxed italic">
+                                "Делал перекрытие старого партака 10-летней давности. Мастера разработали крутой эскиз в стиле графики. Теперь вместо стыда горжусь крутой татуировкой. Рекомендую INK & ART!"
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-3 pt-4 border-t border-white/10">
+                            <div class="w-10 h-10 rounded-full gold-gradient-bg text-darkBg font-bold flex items-center justify-center">
+                                ЭМ
+                            </div>
+                            <div>
+                                <div class="font-bold text-white text-sm">Эльдар М.</div>
+                                <div class="text-xs text-gray-400">Постоянный клиент</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 8: ONLINE BOOKING FORM -->
+        <section id="booking" class="py-24 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+            <div class="glass-card p-8 sm:p-12 border-goldAccent/40 relative reveal">
+                <div class="text-center space-y-4 mb-10">
+                    <span class="text-goldAccent text-sm font-bold tracking-widest uppercase">Онлайн Запись</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white">Запишитесь на сеанс или консультацию</h2>
+                    <p class="text-gray-400 text-sm">Заполните форму, и наш администратор свяжется с вами в течение 15 минут для уточнения деталей и эскиза.</p>
+                </div>
+
+                <form id="appointment-form" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <!-- Name -->
+                        <div class="space-y-2">
+                            <label class="text-sm font-semibold text-gray-300">Ваше Имя *</label>
+                            <input type="text" id="form-name" required placeholder="Нурбек" class="w-full bg-stone-900/80 border border-white/10 rounded-xl px-4 py-3 text-white custom-input text-sm">
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="space-y-2">
+                            <label class="text-sm font-semibold text-gray-300">Номер Телефона (Бишкек) *</label>
+                            <input type="tel" id="form-phone" required placeholder="+996 555 123 456" value="+996 " class="w-full bg-stone-900/80 border border-white/10 rounded-xl px-4 py-3 text-white custom-input text-sm">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <!-- Artist Selection -->
+                        <div class="space-y-2">
+                            <label class="text-sm font-semibold text-gray-300">Выбор Мастера</label>
+                            <select id="form-artist" class="w-full bg-stone-900/80 border border-white/10 rounded-xl px-4 py-3 text-white custom-input text-sm">
+                                <option value="Любой свободный мастер">Любой свободный мастер</option>
+                                <option value="Асхат (Реализм, Графика)">Асхат (Реализм, Графика)</option>
+                                <option value="Алина (Минимализм, Леттеринг)">Алина (Минимализм, Леттеринг)</option>
+                                <option value="Данияр (Япония, Cover-Up)">Данияр (Япония, Cover-Up)</option>
+                                <option value="Елена (Цветная татуировка)">Елена (Цветная татуировка)</option>
+                            </select>
+                        </div>
+
+                        <!-- Service Selection -->
+                        <div class="space-y-2">
+                            <label class="text-sm font-semibold text-gray-300">Желаемая Услуга</label>
+                            <select id="form-service" class="w-full bg-stone-900/80 border border-white/10 rounded-xl px-4 py-3 text-white custom-input text-sm">
+                                <option value="Консультация + Эскиз">Бесплатная Консультация + Эскиз</option>
+                                <option value="Мини-татуировка">Мини-татуировка (2 500 KGS)</option>
+                                <option value="Художественный Сеанс">Художественный Сеанс (7 000 KGS)</option>
+                                <option value="Перекрытие (Cover-Up)">Перекрытие (8 500 KGS)</option>
+                                <option value="Лазерное Осветление">Лазерное Осветление (3 000 KGS)</option>
+                                <option value="VIP Комплекс">VIP Комплекс (12 000 KGS)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <!-- Date -->
+                        <div class="space-y-2">
+                            <label class="text-sm font-semibold text-gray-300">Удобная Дата *</label>
+                            <input type="date" id="form-date" required class="w-full bg-stone-900/80 border border-white/10 rounded-xl px-4 py-3 text-white custom-input text-sm">
+                        </div>
+
+                        <!-- Location -->
+                        <div class="space-y-2">
+                            <label class="text-sm font-semibold text-gray-300">Филиал в Бишкеке</label>
+                            <select id="form-branch" class="w-full bg-stone-900/80 border border-white/10 rounded-xl px-4 py-3 text-white custom-input text-sm">
+                                <option value="Центр: пр. Чуй / ул. Исанова">Центр: пр. Чуй / ул. Исанова</option>
+                                <option value="Юг: Микрорайон 10">Юг: Микрорайон 10</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Idea / Description -->
+                    <div class="space-y-2">
+                        <label class="text-sm font-semibold text-gray-300">Описание идеи / Размер / Место нанесения</label>
+                        <textarea id="form-message" rows="3" placeholder="Расскажите о вашей идее (например: лев на предплечье 15 см, черная графика)..." class="w-full bg-stone-900/80 border border-white/10 rounded-xl px-4 py-3 text-white custom-input text-sm"></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="w-full gold-gradient-bg text-darkBg font-extrabold py-4 rounded-xl gold-glow hover:scale-[1.01] transition-transform text-center flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        <span>Отправить Заявку</span>
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- SECTION 9: CONTACTS -->
+        <section id="contacts" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-white/5">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+
+                <div class="space-y-8 reveal">
+                    <div class="space-y-3">
+                        <span class="text-goldAccent text-sm font-bold tracking-widest uppercase">Локации & Связь</span>
+                        <h2 class="text-3xl sm:text-4xl font-bold text-white">Ждем вас в наших студиях</h2>
+                        <p class="text-gray-400">Работаем ежедневно по предварительной записи. Чай, кофе и премиальная атмосфера гарантированы.</p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <!-- Address 1 -->
+                        <div class="glass-card p-6 flex items-start gap-4">
+                            <div class="p-3 bg-goldAccent/20 text-goldAccent rounded-xl">
+                                <i class="fa-solid fa-location-dot text-2xl"></i>
+                            </div>
+                            <div class="space-y-1">
+                                <h4 class="font-bold text-white">Филиал "Центр"</h4>
+                                <p class="text-sm text-gray-300">г. Бишкек, пр. Чуй / ул. Исанова (пересечение)</p>
+                                <p class="text-xs text-goldAccent">Ежедневно: 10:00 — 21:00</p>
+                            </div>
+                        </div>
+
+                        <!-- Address 2 -->
+                        <div class="glass-card p-6 flex items-start gap-4">
+                            <div class="p-3 bg-goldAccent/20 text-goldAccent rounded-xl">
+                                <i class="fa-solid fa-location-dot text-2xl"></i>
+                            </div>
+                            <div class="space-y-1">
+                                <h4 class="font-bold text-white">Филиал "Юг"</h4>
+                                <p class="text-sm text-gray-300">г. Бишкек, Микрорайон 10, дом 15/2</p>
+                                <p class="text-xs text-goldAccent">Ежедневно: 10:00 — 21:00</p>
+                            </div>
+                        </div>
+
+                        <!-- Direct Contacts -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <a href="tel:+996555123456" class="glass-card p-4 flex items-center gap-3 hover:border-goldAccent transition-all">
+                                <i class="fa-solid fa-phone text-goldAccent text-xl"></i>
+                                <div>
+                                    <div class="text-xs text-gray-400">Телефон / WhatsApp</div>
+                                    <div class="text-sm font-bold text-white">+996 555 123 456</div>
+                                </div>
+                            </a>
+
+                            <a href="mailto:info@inkart.kg" class="glass-card p-4 flex items-center gap-3 hover:border-goldAccent transition-all">
+                                <i class="fa-solid fa-envelope text-goldAccent text-xl"></i>
+                                <div>
+                                    <div class="text-xs text-gray-400">Email</div>
+                                    <div class="text-sm font-bold text-white">info@inkart.kg</div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Social Buttons -->
+                        <div class="flex gap-4 pt-2">
+                            <a href="https://instagram.com" target="_blank" class="w-12 h-12 rounded-xl glass-card flex items-center justify-center text-gray-300 hover:text-goldAccent hover:border-goldAccent transition-all text-xl">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="https://telegram.org" target="_blank" class="w-12 h-12 rounded-xl glass-card flex items-center justify-center text-gray-300 hover:text-goldAccent hover:border-goldAccent transition-all text-xl">
+                                <i class="fa-brands fa-telegram"></i>
+                            </a>
+                            <a href="https://wa.me/996555123456" target="_blank" class="w-12 h-12 rounded-xl glass-card flex items-center justify-center text-gray-300 hover:text-goldAccent hover:border-goldAccent transition-all text-xl">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interactive Map Placeholder / Stylish Frame -->
+                <div class="glass-card overflow-hidden border border-goldAccent/30 relative min-h-[350px] reveal flex flex-col">
+                    <div class="bg-stone-900 p-4 border-b border-white/10 flex justify-between items-center">
+                        <span class="text-sm font-bold text-white flex items-center gap-2">
+                            <i class="fa-solid fa-map-pin text-goldAccent"></i> Карта Бишкека
+                        </span>
+                        <span class="text-xs text-gray-400">2 Студии на карте</span>
+                    </div>
+                    <div class="flex-grow relative bg-stone-900/90 flex items-center justify-center p-8 text-center">
+                        <div class="space-y-4">
+                            <i class="fa-solid fa-compass text-5xl text-goldAccent animate-pulse"></i>
+                            <h3 class="text-xl font-bold text-white">Интерактивные локации</h3>
+                            <p class="text-sm text-gray-400 max-w-md">Мы расположились в удобных точках Бишкека с парковкой для клиентов.</p>
+                            <div class="flex justify-center gap-3">
+                                <a href="https://2gis.kg" target="_blank" class="text-xs bg-goldAccent/20 text-goldAccent border border-goldAccent/40 px-4 py-2 rounded-lg font-bold hover:bg-goldAccent hover:text-darkBg transition-all">Открыть в 2GIS</a>
+                                <a href="https://maps.google.com" target="_blank" class="text-xs bg-white/10 text-white border border-white/20 px-4 py-2 rounded-lg font-bold hover:bg-white/20 transition-all">Google Maps</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- SECTION 10: FOOTER -->
+    <footer class="bg-stone-950 border-t border-white/10 py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto space-y-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Col 1 -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-lg gold-gradient-bg flex items-center justify-center text-darkBg font-black">
+                            <i class="fa-solid fa-pen-nib text-sm"></i>
+                        </div>
+                        <span class="font-bold text-lg text-white">INK & ART</span>
+                    </div>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        Инновационная студия художественной татуировки в Бишкеке. Искусство, безопасность и технологии.
+                    </p>
+                </div>
+
+                <!-- Col 2 -->
+                <div class="space-y-3">
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider">Навигация</h4>
+                    <ul class="space-y-2 text-xs text-gray-400">
+                        <li><a href="#about" class="hover:text-goldAccent transition-colors">О студии</a></li>
+                        <li><a href="#services" class="hover:text-goldAccent transition-colors">Услуги</a></li>
+                        <li><a href="#portfolio" class="hover:text-goldAccent transition-colors">Портфолио & Цены</a></li>
+                        <li><a href="#tech" class="hover:text-goldAccent transition-colors">Инновации</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 -->
+                <div class="space-y-3">
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider">Адреса Бишкек</h4>
+                    <ul class="space-y-2 text-xs text-gray-400">
+                        <li>пр. Чуй / ул. Исанова</li>
+                        <li>Микрорайон 10, дом 15/2</li>
+                        <li>Тел: +996 555 123 456</li>
+                    </ul>
+                </div>
+
+                <!-- Col 4 -->
+                <div class="space-y-3">
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider">График</h4>
+                    <p class="text-xs text-gray-400">Пн - Вс: 10:00 - 21:00</p>
+                    <p class="text-xs text-goldAccent font-semibold">Прием по предварительной записи</p>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-white/5 text-center text-xs text-gray-500 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <div>&copy; 2026 INK & ART Innovation Bishkek. Все права защищены.</div>
+                <div class="flex space-x-6">
+                    <a href="#" class="hover:text-gray-400">Политика конфиденциальности</a>
+                    <a href="#" class="hover:text-gray-400">Публичная оферта</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightbox" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden items-center justify-center p-4">
+        <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white text-3xl hover:text-goldAccent transition-colors">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="max-w-4xl w-full space-y-4 text-center">
+            <img id="lightbox-img" src="" alt="" class="max-h-[80vh] mx-auto rounded-xl border border-goldAccent/30 object-contain">
+            <div id="lightbox-caption" class="text-white text-lg font-bold"></div>
+        </div>
+    </div>
+
+    <!-- SUCCESS BOOKING MODAL -->
+    <div id="success-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4">
+        <div class="glass-card max-w-md w-full p-8 text-center space-y-6 border-goldAccent/50 relative">
+            <div class="w-16 h-16 rounded-full gold-gradient-bg text-darkBg text-3xl font-extrabold flex items-center justify-center mx-auto gold-glow">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <div class="space-y-2">
+                <h3 class="text-2xl font-bold text-white">Заявка принята!</h3>
+                <p class="text-sm text-gray-300">Спасибо за обращение. Администратор INK & ART свяжется с вами по указанному номеру для подтверждения времени и эскиза.</p>
+            </div>
+            <button onclick="closeSuccessModal()" class="w-full gold-gradient-bg text-darkBg font-bold py-3 rounded-xl gold-glow">
+                Отлично
+            </button>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Set Default Date in form to Tomorrow
+        document.addEventListener('DOMContentLoaded', () => {
+            const dateInput = document.getElementById('form-date');
+            const tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            dateInput.value = tomorrow.toISOString().split('T')[0];
+        });
+
+        // 1. Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            } else {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
+            }
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            });
+        });
+
+        // 2. Scroll Animation (IntersectionObserver)
+        const revealElements = document.querySelectorAll('.reveal');
+
+        const revealOnScroll = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        revealElements.forEach(el => revealOnScroll.observe(el));
+
+        // 3. Animated Counter for Stats
+        let statsTriggered = false;
+        const statsSection = document.getElementById('stats');
+        const countElements = document.querySelectorAll('.count-up');
+
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !statsTriggered) {
+                    statsTriggered = true;
+                    countElements.forEach(counter => {
+                        const target = parseFloat(counter.getAttribute('data-target'));
+                        const isDecimal = counter.getAttribute('data-decimal');
+                        const duration = 2000;
+                        const stepTime = 30;
+                        const steps = duration / stepTime;
+                        const increment = target / steps;
+                        let current = 0;
+
+                        const timer = setInterval(() => {
+                            current += increment;
+                            if (current >= target) {
+                                current = target;
+                                clearInterval(timer);
+                            }
+                            counter.textContent = isDecimal ? current.toFixed(1) : Math.floor(current);
+                        }, stepTime);
+                    });
+                }
+            });
+        }, { threshold: 0.3 });
+
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
+
+        // 4. Portfolio Filtering
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-goldAccent', 'text-darkBg', 'gold-glow');
+                    b.classList.add('glass-card', 'text-gray-300');
+                });
+
+                btn.classList.remove('glass-card', 'text-gray-300');
+                btn.classList.add('bg-goldAccent', 'text-darkBg', 'gold-glow');
+
+                const filter = btn.getAttribute('data-filter');
+
+                portfolioItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'flex';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // 5. Lightbox Modal Functionality
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxCaption = document.getElementById('lightbox-caption');
+
+        function openLightbox(src, caption) {
+            lightboxImg.src = src;
+            lightboxCaption.textContent = caption;
+            lightbox.classList.remove('hidden');
+            lightbox.classList.add('flex');
+        }
+
+        function closeLightbox() {
+            lightbox.classList.add('hidden');
+            lightbox.classList.remove('flex');
+        }
+
+        // 6. Pre-select Service from Portfolio
+        function selectService(serviceName) {
+            const serviceSelect = document.getElementById('form-service');
+            if (serviceSelect) {
+                for (let i = 0; i < serviceSelect.options.length; i++) {
+                    if (serviceSelect.options[i].value.includes(serviceName)) {
+                        serviceSelect.selectedIndex = i;
+                        break;
+                    }
+                }
+            }
+        }
+
+        // 7. Form Submission & Validation
+        const appointmentForm = document.getElementById('appointment-form');
+        const successModal = document.getElementById('success-modal');
+
+        appointmentForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const phoneInput = document.getElementById('form-phone').value;
+
+            // Simple validation check for Bishkek number
+            if (!phoneInput.includes('+996') || phoneInput.length < 10) {
+                alert('Пожалуйста, укажите корректный номер телефона в формате +996 ...');
+                return;
+            }
+
+            // Show Success Modal
+            successModal.classList.remove('hidden');
+            successModal.classList.add('flex');
+
+            // Reset form
+            appointmentForm.reset();
+        });
+
+        function closeSuccessModal() {
+            successModal.classList.add('hidden');
+            successModal.classList.remove('flex');
+        }
+    </script>
+</body>
+</html>
